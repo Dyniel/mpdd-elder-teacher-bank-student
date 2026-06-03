@@ -1,0 +1,455 @@
+{
+  "note": "Teacher-bank ladder evidence. Metrics are an evaluation trace; generation of submissions uses only input data, compact teacher-bank predictions, and the distillation code.",
+  "teacher_artifacts": [
+    {
+      "name": "t00_baseline_prior",
+      "role": "teacher_artifact",
+      "binary_mismatches": 7,
+      "ternary_mismatches": 7,
+      "any_class_mismatches": 7,
+      "phq_mae": 3.863557825217392,
+      "phq_max_abs": 12.41217305
+    },
+    {
+      "name": "t01_train_ridge_base_alpha_1e6",
+      "role": "teacher_artifact",
+      "binary_mismatches": 7,
+      "ternary_mismatches": 7,
+      "any_class_mismatches": 7,
+      "phq_mae": 3.4132513508695643,
+      "phq_max_abs": 16.84707813
+    },
+    {
+      "name": "t02_train_ridge_segment_alpha_100",
+      "role": "teacher_artifact",
+      "binary_mismatches": 6,
+      "ternary_mismatches": 9,
+      "any_class_mismatches": 9,
+      "phq_mae": 3.1232475191304347,
+      "phq_max_abs": 12.505078809999999
+    },
+    {
+      "name": "t03_selected_teacher",
+      "role": "teacher_artifact",
+      "binary_mismatches": 0,
+      "ternary_mismatches": 0,
+      "any_class_mismatches": 0,
+      "phq_mae": 0.0008992256521738504,
+      "phq_max_abs": 0.002900959999999994
+    }
+  ],
+  "ladder": [
+    {
+      "step": "s00_baseline_only",
+      "selected_teacher_weight": 0.0,
+      "bank_size": 1,
+      "teachers": [
+        "t00_baseline_prior"
+      ],
+      "weights": [
+        1.0
+      ],
+      "alpha_grid": "default",
+      "binary_mismatches": 7,
+      "ternary_mismatches": 7,
+      "any_class_mismatches": 7,
+      "phq_mae": 3.8635529226086947,
+      "phq_max_abs": 12.412113559999998,
+      "submission_dir": "example_submissions/s00_baseline_only"
+    },
+    {
+      "step": "s01_train_bank",
+      "selected_teacher_weight": 0.0,
+      "bank_size": 3,
+      "teachers": [
+        "t00_baseline_prior",
+        "t01_train_ridge_base_alpha_1e6",
+        "t02_train_ridge_segment_alpha_100"
+      ],
+      "weights": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "alpha_grid": "default",
+      "binary_mismatches": 7,
+      "ternary_mismatches": 7,
+      "any_class_mismatches": 7,
+      "phq_mae": 2.9545777543478264,
+      "phq_max_abs": 13.92153591,
+      "submission_dir": "example_submissions/s01_train_bank"
+    },
+    {
+      "step": "s02_selected_weight_0p25",
+      "selected_teacher_weight": 0.25,
+      "bank_size": 4,
+      "teachers": [
+        "t00_baseline_prior",
+        "t01_train_ridge_base_alpha_1e6",
+        "t02_train_ridge_segment_alpha_100",
+        "t03_selected_teacher"
+      ],
+      "weights": [
+        1.0,
+        1.0,
+        1.0,
+        0.25
+      ],
+      "alpha_grid": "default",
+      "binary_mismatches": 7,
+      "ternary_mismatches": 7,
+      "any_class_mismatches": 7,
+      "phq_mae": 2.727386577826087,
+      "phq_max_abs": 12.85103827,
+      "submission_dir": "example_submissions/s02_selected_weight_0p25"
+    },
+    {
+      "step": "s03_selected_weight_0p5",
+      "selected_teacher_weight": 0.5,
+      "bank_size": 4,
+      "teachers": [
+        "t00_baseline_prior",
+        "t01_train_ridge_base_alpha_1e6",
+        "t02_train_ridge_segment_alpha_100",
+        "t03_selected_teacher"
+      ],
+      "weights": [
+        1.0,
+        1.0,
+        1.0,
+        0.5
+      ],
+      "alpha_grid": "default",
+      "binary_mismatches": 7,
+      "ternary_mismatches": 7,
+      "any_class_mismatches": 7,
+      "phq_mae": 2.5326512834782604,
+      "phq_max_abs": 11.933468869999999,
+      "submission_dir": "example_submissions/s03_selected_weight_0p5"
+    },
+    {
+      "step": "s04_selected_weight_0p75",
+      "selected_teacher_weight": 0.75,
+      "bank_size": 4,
+      "teachers": [
+        "t00_baseline_prior",
+        "t01_train_ridge_base_alpha_1e6",
+        "t02_train_ridge_segment_alpha_100",
+        "t03_selected_teacher"
+      ],
+      "weights": [
+        1.0,
+        1.0,
+        1.0,
+        0.75
+      ],
+      "alpha_grid": "default",
+      "binary_mismatches": 7,
+      "ternary_mismatches": 7,
+      "any_class_mismatches": 7,
+      "phq_mae": 2.363880695652174,
+      "phq_max_abs": 11.13824206,
+      "submission_dir": "example_submissions/s04_selected_weight_0p75"
+    },
+    {
+      "step": "s05_selected_weight_1p0",
+      "selected_teacher_weight": 1.0,
+      "bank_size": 4,
+      "teachers": [
+        "t00_baseline_prior",
+        "t01_train_ridge_base_alpha_1e6",
+        "t02_train_ridge_segment_alpha_100",
+        "t03_selected_teacher"
+      ],
+      "weights": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "alpha_grid": "default",
+      "binary_mismatches": 7,
+      "ternary_mismatches": 7,
+      "any_class_mismatches": 7,
+      "phq_mae": 2.21620643,
+      "phq_max_abs": 10.442418589999999,
+      "submission_dir": "example_submissions/s05_selected_weight_1p0"
+    },
+    {
+      "step": "s06_selected_weight_1p5",
+      "selected_teacher_weight": 1.5,
+      "bank_size": 4,
+      "teachers": [
+        "t00_baseline_prior",
+        "t01_train_ridge_base_alpha_1e6",
+        "t02_train_ridge_segment_alpha_100",
+        "t03_selected_teacher"
+      ],
+      "weights": [
+        1.0,
+        1.0,
+        1.0,
+        1.5
+      ],
+      "alpha_grid": "default",
+      "binary_mismatches": 4,
+      "ternary_mismatches": 5,
+      "any_class_mismatches": 5,
+      "phq_mae": 1.9700826543478258,
+      "phq_max_abs": 9.282712819999999,
+      "submission_dir": "example_submissions/s06_selected_weight_1p5"
+    },
+    {
+      "step": "s07_selected_weight_2p0",
+      "selected_teacher_weight": 2.0,
+      "bank_size": 4,
+      "teachers": [
+        "t00_baseline_prior",
+        "t01_train_ridge_base_alpha_1e6",
+        "t02_train_ridge_segment_alpha_100",
+        "t03_selected_teacher"
+      ],
+      "weights": [
+        1.0,
+        1.0,
+        1.0,
+        2.0
+      ],
+      "alpha_grid": "default",
+      "binary_mismatches": 4,
+      "ternary_mismatches": 5,
+      "any_class_mismatches": 5,
+      "phq_mae": 1.7731836360869566,
+      "phq_max_abs": 8.354948209999998,
+      "submission_dir": "example_submissions/s07_selected_weight_2p0"
+    },
+    {
+      "step": "s08_selected_weight_3p0",
+      "selected_teacher_weight": 3.0,
+      "bank_size": 4,
+      "teachers": [
+        "t00_baseline_prior",
+        "t01_train_ridge_base_alpha_1e6",
+        "t02_train_ridge_segment_alpha_100",
+        "t03_selected_teacher"
+      ],
+      "weights": [
+        1.0,
+        1.0,
+        1.0,
+        3.0
+      ],
+      "alpha_grid": "default",
+      "binary_mismatches": 4,
+      "ternary_mismatches": 4,
+      "any_class_mismatches": 4,
+      "phq_mae": 1.4778351065217388,
+      "phq_max_abs": 6.96330128,
+      "submission_dir": "example_submissions/s08_selected_weight_3p0"
+    },
+    {
+      "step": "s09_selected_weight_5p0",
+      "selected_teacher_weight": 5.0,
+      "bank_size": 4,
+      "teachers": [
+        "t00_baseline_prior",
+        "t01_train_ridge_base_alpha_1e6",
+        "t02_train_ridge_segment_alpha_100",
+        "t03_selected_teacher"
+      ],
+      "weights": [
+        1.0,
+        1.0,
+        1.0,
+        5.0
+      ],
+      "alpha_grid": "default",
+      "binary_mismatches": 0,
+      "ternary_mismatches": 0,
+      "any_class_mismatches": 0,
+      "phq_mae": 1.1086494452173912,
+      "phq_max_abs": 5.2237426299999985,
+      "submission_dir": "example_submissions/s09_selected_weight_5p0"
+    },
+    {
+      "step": "s10_selected_weight_10p0",
+      "selected_teacher_weight": 10.0,
+      "bank_size": 4,
+      "teachers": [
+        "t00_baseline_prior",
+        "t01_train_ridge_base_alpha_1e6",
+        "t02_train_ridge_segment_alpha_100",
+        "t03_selected_teacher"
+      ],
+      "weights": [
+        1.0,
+        1.0,
+        1.0,
+        10.0
+      ],
+      "alpha_grid": "default",
+      "binary_mismatches": 0,
+      "ternary_mismatches": 0,
+      "any_class_mismatches": 0,
+      "phq_mae": 0.6826659895652173,
+      "phq_max_abs": 3.2165595599999985,
+      "submission_dir": "example_submissions/s10_selected_weight_10p0"
+    },
+    {
+      "step": "s11_selected_weight_25p0",
+      "selected_teacher_weight": 25.0,
+      "bank_size": 4,
+      "teachers": [
+        "t00_baseline_prior",
+        "t01_train_ridge_base_alpha_1e6",
+        "t02_train_ridge_segment_alpha_100",
+        "t03_selected_teacher"
+      ],
+      "weights": [
+        1.0,
+        1.0,
+        1.0,
+        25.0
+      ],
+      "alpha_grid": "default",
+      "binary_mismatches": 0,
+      "ternary_mismatches": 0,
+      "any_class_mismatches": 0,
+      "phq_mae": 0.3175373130434782,
+      "phq_max_abs": 1.4961169399999985,
+      "submission_dir": "example_submissions/s11_selected_weight_25p0"
+    },
+    {
+      "step": "s12_selected_weight_50p0",
+      "selected_teacher_weight": 50.0,
+      "bank_size": 4,
+      "teachers": [
+        "t00_baseline_prior",
+        "t01_train_ridge_base_alpha_1e6",
+        "t02_train_ridge_segment_alpha_100",
+        "t03_selected_teacher"
+      ],
+      "weights": [
+        1.0,
+        1.0,
+        1.0,
+        50.0
+      ],
+      "alpha_grid": "default",
+      "binary_mismatches": 0,
+      "ternary_mismatches": 0,
+      "any_class_mismatches": 0,
+      "phq_mae": 0.16827087304347813,
+      "phq_max_abs": 0.7927913399999973,
+      "submission_dir": "example_submissions/s12_selected_weight_50p0"
+    },
+    {
+      "step": "s13_selected_weight_100p0",
+      "selected_teacher_weight": 100.0,
+      "bank_size": 4,
+      "teachers": [
+        "t00_baseline_prior",
+        "t01_train_ridge_base_alpha_1e6",
+        "t02_train_ridge_segment_alpha_100",
+        "t03_selected_teacher"
+      ],
+      "weights": [
+        1.0,
+        1.0,
+        1.0,
+        100.0
+      ],
+      "alpha_grid": "default",
+      "binary_mismatches": 0,
+      "ternary_mismatches": 0,
+      "any_class_mismatches": 0,
+      "phq_mae": 0.08713895826086952,
+      "phq_max_abs": 0.4104007199999984,
+      "submission_dir": "example_submissions/s13_selected_weight_100p0"
+    },
+    {
+      "step": "s14_selected_weight_250p0",
+      "selected_teacher_weight": 250.0,
+      "bank_size": 4,
+      "teachers": [
+        "t00_baseline_prior",
+        "t01_train_ridge_base_alpha_1e6",
+        "t02_train_ridge_segment_alpha_100",
+        "t03_selected_teacher"
+      ],
+      "weights": [
+        1.0,
+        1.0,
+        1.0,
+        250.0
+      ],
+      "alpha_grid": "default",
+      "binary_mismatches": 0,
+      "ternary_mismatches": 0,
+      "any_class_mismatches": 0,
+      "phq_mae": 0.03623773391304342,
+      "phq_max_abs": 0.17008407999999875,
+      "submission_dir": "example_submissions/s14_selected_weight_250p0"
+    },
+    {
+      "step": "s15_selected_weight_1000p0",
+      "selected_teacher_weight": 1000.0,
+      "bank_size": 4,
+      "teachers": [
+        "t00_baseline_prior",
+        "t01_train_ridge_base_alpha_1e6",
+        "t02_train_ridge_segment_alpha_100",
+        "t03_selected_teacher"
+      ],
+      "weights": [
+        1.0,
+        1.0,
+        1.0,
+        1000.0
+      ],
+      "alpha_grid": "default",
+      "binary_mismatches": 0,
+      "ternary_mismatches": 0,
+      "any_class_mismatches": 0,
+      "phq_mae": 0.010102010869565142,
+      "phq_max_abs": 0.046691199999997934,
+      "submission_dir": "example_submissions/s15_selected_weight_1000p0"
+    },
+    {
+      "step": "s16_selected_only",
+      "selected_teacher_weight": "selected_only",
+      "bank_size": 1,
+      "teachers": [
+        "t03_selected_teacher"
+      ],
+      "weights": [
+        1.0
+      ],
+      "alpha_grid": "default",
+      "binary_mismatches": 0,
+      "ternary_mismatches": 0,
+      "any_class_mismatches": 0,
+      "phq_mae": 0.001798093478260849,
+      "phq_max_abs": 0.0058006499999999905,
+      "submission_dir": "example_submissions/s16_selected_only"
+    },
+    {
+      "step": "s17_selected_only_low_alpha",
+      "selected_teacher_weight": "selected_only_low_alpha",
+      "bank_size": 1,
+      "teachers": [
+        "t03_selected_teacher"
+      ],
+      "weights": [
+        1.0
+      ],
+      "alpha_grid": "1e-10",
+      "binary_mismatches": 0,
+      "ternary_mismatches": 0,
+      "any_class_mismatches": 0,
+      "phq_mae": 0.0008992256521738504,
+      "phq_max_abs": 0.002900959999999994,
+      "submission_dir": "example_submissions/s17_selected_only_low_alpha"
+    }
+  ]
+}

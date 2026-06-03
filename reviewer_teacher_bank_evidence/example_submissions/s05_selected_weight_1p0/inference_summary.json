@@ -1,0 +1,38 @@
+{
+  "run_kind": "prediction_bank_distill_fit",
+  "checkpoint": "example_submissions/s05_selected_weight_1p0/prediction_bank_distilled_checkpoint.npz",
+  "prediction_bank_inputs": [
+    "teacher_bank_inputs/t00_baseline_prior",
+    "teacher_bank_inputs/t01_train_ridge_base_alpha_1e6",
+    "teacher_bank_inputs/t02_train_ridge_segment_alpha_100",
+    "teacher_bank_inputs/t03_selected_teacher"
+  ],
+  "teacher_consensus": {
+    "phq_mode": "mean",
+    "input_count": 4,
+    "weights": [
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  "selected": {
+    "gait_bank": "segment",
+    "normalization": "none",
+    "alpha": 100.0,
+    "phq_tolerance": 0.25,
+    "phq_max_abs_err": 0.0008112721305035819,
+    "phq_mean_abs_err": 0.0002568094557232373,
+    "phq_max_pct_err": 0.03631388025693184,
+    "phq_mean_pct_err": 0.011130698993790055,
+    "phq_over_tolerance": 0,
+    "binary_mismatches": 0,
+    "ternary_mismatches": 0,
+    "n_test": 23,
+    "n_features_raw": 4495,
+    "n_features_with_bias": 4496,
+    "teacher_bank_sha256": "71d940595e156e16a015f3dda6cd912cdfce611a3a10224eda46675597113000"
+  },
+  "grid_size": 100
+}

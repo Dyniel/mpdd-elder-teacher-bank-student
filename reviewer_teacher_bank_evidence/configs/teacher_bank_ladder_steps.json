@@ -1,0 +1,308 @@
+{
+  "steps": [
+    {
+      "step": "s00_baseline_only",
+      "selected_teacher_weight": "0.0",
+      "alpha_grid": "default",
+      "teachers": [
+        "t00_baseline_prior"
+      ],
+      "weights": [
+        1.0
+      ],
+      "expected_submission_dir": "example_submissions/s00_baseline_only"
+    },
+    {
+      "step": "s01_train_bank",
+      "selected_teacher_weight": "0.0",
+      "alpha_grid": "default",
+      "teachers": [
+        "t00_baseline_prior",
+        "t01_train_ridge_base_alpha_1e6",
+        "t02_train_ridge_segment_alpha_100"
+      ],
+      "weights": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "expected_submission_dir": "example_submissions/s01_train_bank"
+    },
+    {
+      "step": "s02_selected_weight_0p25",
+      "selected_teacher_weight": "0.25",
+      "alpha_grid": "default",
+      "teachers": [
+        "t00_baseline_prior",
+        "t01_train_ridge_base_alpha_1e6",
+        "t02_train_ridge_segment_alpha_100",
+        "t03_selected_teacher"
+      ],
+      "weights": [
+        1.0,
+        1.0,
+        1.0,
+        0.25
+      ],
+      "expected_submission_dir": "example_submissions/s02_selected_weight_0p25"
+    },
+    {
+      "step": "s03_selected_weight_0p5",
+      "selected_teacher_weight": "0.5",
+      "alpha_grid": "default",
+      "teachers": [
+        "t00_baseline_prior",
+        "t01_train_ridge_base_alpha_1e6",
+        "t02_train_ridge_segment_alpha_100",
+        "t03_selected_teacher"
+      ],
+      "weights": [
+        1.0,
+        1.0,
+        1.0,
+        0.5
+      ],
+      "expected_submission_dir": "example_submissions/s03_selected_weight_0p5"
+    },
+    {
+      "step": "s04_selected_weight_0p75",
+      "selected_teacher_weight": "0.75",
+      "alpha_grid": "default",
+      "teachers": [
+        "t00_baseline_prior",
+        "t01_train_ridge_base_alpha_1e6",
+        "t02_train_ridge_segment_alpha_100",
+        "t03_selected_teacher"
+      ],
+      "weights": [
+        1.0,
+        1.0,
+        1.0,
+        0.75
+      ],
+      "expected_submission_dir": "example_submissions/s04_selected_weight_0p75"
+    },
+    {
+      "step": "s05_selected_weight_1p0",
+      "selected_teacher_weight": "1.0",
+      "alpha_grid": "default",
+      "teachers": [
+        "t00_baseline_prior",
+        "t01_train_ridge_base_alpha_1e6",
+        "t02_train_ridge_segment_alpha_100",
+        "t03_selected_teacher"
+      ],
+      "weights": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "expected_submission_dir": "example_submissions/s05_selected_weight_1p0"
+    },
+    {
+      "step": "s06_selected_weight_1p5",
+      "selected_teacher_weight": "1.5",
+      "alpha_grid": "default",
+      "teachers": [
+        "t00_baseline_prior",
+        "t01_train_ridge_base_alpha_1e6",
+        "t02_train_ridge_segment_alpha_100",
+        "t03_selected_teacher"
+      ],
+      "weights": [
+        1.0,
+        1.0,
+        1.0,
+        1.5
+      ],
+      "expected_submission_dir": "example_submissions/s06_selected_weight_1p5"
+    },
+    {
+      "step": "s07_selected_weight_2p0",
+      "selected_teacher_weight": "2.0",
+      "alpha_grid": "default",
+      "teachers": [
+        "t00_baseline_prior",
+        "t01_train_ridge_base_alpha_1e6",
+        "t02_train_ridge_segment_alpha_100",
+        "t03_selected_teacher"
+      ],
+      "weights": [
+        1.0,
+        1.0,
+        1.0,
+        2.0
+      ],
+      "expected_submission_dir": "example_submissions/s07_selected_weight_2p0"
+    },
+    {
+      "step": "s08_selected_weight_3p0",
+      "selected_teacher_weight": "3.0",
+      "alpha_grid": "default",
+      "teachers": [
+        "t00_baseline_prior",
+        "t01_train_ridge_base_alpha_1e6",
+        "t02_train_ridge_segment_alpha_100",
+        "t03_selected_teacher"
+      ],
+      "weights": [
+        1.0,
+        1.0,
+        1.0,
+        3.0
+      ],
+      "expected_submission_dir": "example_submissions/s08_selected_weight_3p0"
+    },
+    {
+      "step": "s09_selected_weight_5p0",
+      "selected_teacher_weight": "5.0",
+      "alpha_grid": "default",
+      "teachers": [
+        "t00_baseline_prior",
+        "t01_train_ridge_base_alpha_1e6",
+        "t02_train_ridge_segment_alpha_100",
+        "t03_selected_teacher"
+      ],
+      "weights": [
+        1.0,
+        1.0,
+        1.0,
+        5.0
+      ],
+      "expected_submission_dir": "example_submissions/s09_selected_weight_5p0"
+    },
+    {
+      "step": "s10_selected_weight_10p0",
+      "selected_teacher_weight": "10.0",
+      "alpha_grid": "default",
+      "teachers": [
+        "t00_baseline_prior",
+        "t01_train_ridge_base_alpha_1e6",
+        "t02_train_ridge_segment_alpha_100",
+        "t03_selected_teacher"
+      ],
+      "weights": [
+        1.0,
+        1.0,
+        1.0,
+        10.0
+      ],
+      "expected_submission_dir": "example_submissions/s10_selected_weight_10p0"
+    },
+    {
+      "step": "s11_selected_weight_25p0",
+      "selected_teacher_weight": "25.0",
+      "alpha_grid": "default",
+      "teachers": [
+        "t00_baseline_prior",
+        "t01_train_ridge_base_alpha_1e6",
+        "t02_train_ridge_segment_alpha_100",
+        "t03_selected_teacher"
+      ],
+      "weights": [
+        1.0,
+        1.0,
+        1.0,
+        25.0
+      ],
+      "expected_submission_dir": "example_submissions/s11_selected_weight_25p0"
+    },
+    {
+      "step": "s12_selected_weight_50p0",
+      "selected_teacher_weight": "50.0",
+      "alpha_grid": "default",
+      "teachers": [
+        "t00_baseline_prior",
+        "t01_train_ridge_base_alpha_1e6",
+        "t02_train_ridge_segment_alpha_100",
+        "t03_selected_teacher"
+      ],
+      "weights": [
+        1.0,
+        1.0,
+        1.0,
+        50.0
+      ],
+      "expected_submission_dir": "example_submissions/s12_selected_weight_50p0"
+    },
+    {
+      "step": "s13_selected_weight_100p0",
+      "selected_teacher_weight": "100.0",
+      "alpha_grid": "default",
+      "teachers": [
+        "t00_baseline_prior",
+        "t01_train_ridge_base_alpha_1e6",
+        "t02_train_ridge_segment_alpha_100",
+        "t03_selected_teacher"
+      ],
+      "weights": [
+        1.0,
+        1.0,
+        1.0,
+        100.0
+      ],
+      "expected_submission_dir": "example_submissions/s13_selected_weight_100p0"
+    },
+    {
+      "step": "s14_selected_weight_250p0",
+      "selected_teacher_weight": "250.0",
+      "alpha_grid": "default",
+      "teachers": [
+        "t00_baseline_prior",
+        "t01_train_ridge_base_alpha_1e6",
+        "t02_train_ridge_segment_alpha_100",
+        "t03_selected_teacher"
+      ],
+      "weights": [
+        1.0,
+        1.0,
+        1.0,
+        250.0
+      ],
+      "expected_submission_dir": "example_submissions/s14_selected_weight_250p0"
+    },
+    {
+      "step": "s15_selected_weight_1000p0",
+      "selected_teacher_weight": "1000.0",
+      "alpha_grid": "default",
+      "teachers": [
+        "t00_baseline_prior",
+        "t01_train_ridge_base_alpha_1e6",
+        "t02_train_ridge_segment_alpha_100",
+        "t03_selected_teacher"
+      ],
+      "weights": [
+        1.0,
+        1.0,
+        1.0,
+        1000.0
+      ],
+      "expected_submission_dir": "example_submissions/s15_selected_weight_1000p0"
+    },
+    {
+      "step": "s16_selected_only",
+      "selected_teacher_weight": "selected_only",
+      "alpha_grid": "default",
+      "teachers": [
+        "t03_selected_teacher"
+      ],
+      "weights": [
+        1.0
+      ],
+      "expected_submission_dir": "example_submissions/s16_selected_only"
+    },
+    {
+      "step": "s17_selected_only_low_alpha",
+      "selected_teacher_weight": "selected_only_low_alpha",
+      "alpha_grid": "1e-10",
+      "teachers": [
+        "t03_selected_teacher"
+      ],
+      "weights": [
+        1.0
+      ],
+      "expected_submission_dir": "example_submissions/s17_selected_only_low_alpha"
+    }
+  ]
+}

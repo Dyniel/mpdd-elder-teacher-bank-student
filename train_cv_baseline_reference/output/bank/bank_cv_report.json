@@ -1,0 +1,39 @@
+{
+  "method": "baseline submission bank -> consensus (weighted vote + mean), train-only, OOF-validated",
+  "gait_bank": "base",
+  "cv": {
+    "splits": 5,
+    "repeats": 3,
+    "seed": 20260602
+  },
+  "consensus_cv": {
+    "ternary_macro_f1": 0.45756962467658163,
+    "binary_macro_f1": 0.5422471629403228,
+    "phq_mae": 3.3185449573838692
+  },
+  "best_single_member_cv": {
+    "ternary_macro_f1": 0.4717051154583905,
+    "phq_mae": 3.2499336762153788
+  },
+  "consensus_beats_best_member": {
+    "ternary": false,
+    "phq": false
+  },
+  "member_ternary_macro_f1": {
+    "logreg_C0.1": 0.4717051154583905,
+    "logreg_C0.3": 0.4717051154583905,
+    "logreg_C1.0": 0.4677031647218404,
+    "logreg_pca32": 0.4625626112273915,
+    "svc_linear": 0.4553020784682616,
+    "extratrees": 0.26632795249426544
+  },
+  "member_phq_mae": {
+    "ridge_a100_pca16": 3.4043513572566924,
+    "ridge_a300_pca32": 3.48883929314621,
+    "ridge_a1000": 3.519177595374366,
+    "knn_reg": 3.2499336762153788,
+    "rf_reg": 3.526903915254574
+  },
+  "n_train": 87,
+  "n_test": 23
+}
